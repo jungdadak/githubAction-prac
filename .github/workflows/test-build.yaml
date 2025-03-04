@@ -19,8 +19,9 @@ jobs:
 
       - name: 테스트 실행하기
         run: npm run test
-
   Build:
+    ## needs 없이 만들면 병렬로 실해됩니다. -> 이러면 안되긋쵸 동기적으로 가야 합니다.
+    needs: Test # 의존성 추가
     runs-on: ubuntu-latest
     steps:
       - name: 코드 가져오기
