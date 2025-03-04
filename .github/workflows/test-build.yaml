@@ -12,6 +12,9 @@ jobs:
 
       - name: 모듈 설치하기
         run: pnpm install
+        with:
+          node-version: 20
+          cache: 'pnpm'
 
       - name: 테스트 실행하기
         run: pnpm run test
