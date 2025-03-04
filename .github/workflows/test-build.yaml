@@ -1,0 +1,19 @@
+
+
+name : Test , Build, and Deploy
+on: push
+jobs:
+  # 1. test
+  # 2. build
+  # 3. Deploy -> 콘솔만 남김
+  Test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: 모듈 설치하기
+        run: pnpm install
+
+      - name: 테스트 실행하기
+        run: pnpm run test
