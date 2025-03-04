@@ -11,9 +11,23 @@ jobs:
         # github repo 리눅스 명령어로 클론하고 뭐시기 하는 걸 누가 만들어 놓은거임
         # import 같은거임 ㅇㅇ
         uses: actions/checkout@v4
+        # run ~~~~~~ git clone ~~~~ 등등 docker image 파일에서 git clone 까지 진행시켜줌.
 
       - name: 모듈 설치하기
+        # run: 내가 직접 명령어를 실행할 때 !
         run: npm install
 
       - name: 테스트 실행하기
         run: npm run test
+
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: 코드 가져오기
+        uses: actions/checkout@v4
+
+      - name: 모듈 설치하기
+        run: npm install
+
+      - name: 빌드하기
+        run: npm run build
