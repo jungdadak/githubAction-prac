@@ -6,6 +6,20 @@ jobs:
     steps:
       - name: Print Context
         run: echo  " ${{toJSON(github)}} "
+
+      - name: Install Nodes
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: check node version
+        run: node -v
+
+      - name : ls
+        run: ls -al
+
+      - name : Print Context
+        run: echo "${{toJSON(github)}}"
+
         
 # echo -> linux 의 로그 출력 명령어
 
